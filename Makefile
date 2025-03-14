@@ -17,6 +17,9 @@ SRCS =	libft_utils/ft_atol.c \
 		src/input_handler.c \
 		src/init_stacks.c \
 		src/turk_sort.c \
+		src/sort_utils.c \
+		src/sort_utils_2.c \
+		src/stack_utils.c \
 
 OBJS = $(SRCS:.c=.o)
 

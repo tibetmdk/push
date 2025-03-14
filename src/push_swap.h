@@ -42,6 +42,8 @@ int		*parse_input(t_data *data);
 long	ft_atol(char *str);
 int		ft_printf(const char *str, ...);
 int		ft_strlen(const char *s);
+int	get_stack_len(t_stack *stack);
+int	stack_is_sorted(t_stack *stack);
 
 
 char	*join_args(int ac, char **av);
@@ -57,4 +59,13 @@ void	turk_sort(t_data *data);
 void	quit(t_data *data, char flag);
 void	init_stacks(t_data *data);
 void	ft_error(void);
+void	sa(t_stack *stack_a, int print);
+void	sb(t_stack *stack_b, int print);
+void	pb(t_data *data, int print);
+void	pa(t_data *data, int print);
+void	ra(t_data *data, int print);
+void	rra(t_data *data ,int print);
+void	rrb(t_data *data ,int print);
+void	rr(t_data *data, int print);
+void	rrr(t_data *data, int print);
 #endif

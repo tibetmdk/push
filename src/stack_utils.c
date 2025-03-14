@@ -1,16 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stacks.c                                      :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/14 11:51:04 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/14 13:11:03 by tmidik           ###   ########.fr       */
+/*   Created: 2025/03/14 20:48:17 by tmidik            #+#    #+#             */
+/*   Updated: 2025/03/15 00:19:50 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_stack_len(t_stack *stack)
+{
+	t_stack *temp;
+	int	count;
+
+	count = 0;
+	temp = stack;
+	while (temp)
+	{
+			count++;
+			temp = temp->next;
+	}
+	return (count);
+}
+
+int	stack_is_sorted(t_stack *stack)
+{
+	t_stack	*temp;
+
+	temp = stack;
+	while (temp)
+	{
+		if (temp->value > temp->next->value)
+			return (-1);
+		temp = temp->next;
+	}
+	return (1);
+}
 
 void	init_stacks(t_data *data)
 {
@@ -20,8 +49,9 @@ void	init_stacks(t_data *data)
 
 
 	data->stack_a = NULL;
+	data->stack_b = NULL;
 	prev_node = NULL;
-	i = 0;	
+	i = 0;
 	while (i < data->tab_size)
 	{
 		new_node = (t_stack *)malloc(sizeof(t_stack));

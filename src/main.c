@@ -3,11 +3,10 @@
 void	print_stack(t_stack *stack)
 {
 	t_stack *temp;
-
 	temp = stack;
 	while (temp)
 	{
-		ft_printf("%d", temp->value);
+		ft_printf("%d\n", temp->value);
 		temp = temp->next;
 	}
 }
@@ -31,8 +30,12 @@ int	main(int ac, char **av)
 			return (free(data), 1);
 		if (parse_input(data) == 0)
 			init_stacks(data);
-		//turk_sort(data);
+		turk_sort(data);
 		print_stack(data->stack_a);
+		ft_printf("\n");
+		print_stack(data->stack_b);
+		if (!data->stack_b)
+			ft_printf("stack_b is NULL");
 		ft_printf("\n");
 	}
 }
