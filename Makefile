@@ -13,13 +13,15 @@ SRCS =	libft_utils/ft_atol.c \
 		libft_utils/ft_strchr.c \
 		libft_utils/ft_strlen.c \
 		src/main.c \
-		src/utils.c \
+		src/cost_utils.c \
+		src/cost_utils_2.c \
 		src/input_handler.c \
-		src/init_stacks.c \
 		src/turk_sort.c \
 		src/sort_utils.c \
 		src/sort_utils_2.c \
 		src/stack_utils.c \
+		src/calculate_cost_a_to_b.c \
+		src/calculate_cost_b_to_a.c \
 
 OBJS = $(SRCS:.c=.o)
 

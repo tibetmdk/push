@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 13:02:05 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/14 11:28:15 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 01:29:03 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ int	*parse_input(t_data *data)
 	i = 0;
 	while (data->buffer[i])
 	{
-		if (number_is_valid(data->buffer[i])) // Sayının geçerli olup olmadığını kontrol et
-			ft_error();
+		if (number_is_valid(data->buffer[i]))
+			quit(data, 'e');
 		data->tab[i] = ft_atol(data->buffer[i]);
 		i++;
 	}
@@ -79,7 +79,7 @@ int	*parse_input(t_data *data)
 	while (i < data->tab_size)
 	{
 		if (is_equal(data->tab, data->tab_size, data->tab[i], i))
-			ft_error();
+			quit(data, 'e');
 		i++;
 	}
 	return (0);
@@ -92,12 +92,12 @@ char	*join_args(int ac, char **av)
 	char	*temp;
 
 	i = 1;
-	joined = ft_strdup(""); // Başlangıç olarak boş bir string
+	joined = ft_strdup("");
 	while (i < ac)
 	{
-		temp = ft_strjoin(joined, av[i]); // Eski string ile yeni argümanı birleştir
-		free(joined); // Önceki stringi serbest bırak
-		joined = ft_strjoin(temp, " "); // Sonuna boşluk ekle
+		temp = ft_strjoin(joined, av[i]);
+		free(joined);
+		joined = ft_strjoin(temp, " ");
 		free(temp);
 		i++;
 	}
