@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:54:00 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 01:34:12 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:07:42 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	quit(t_data *data, char flag)
 {
 	int	i;
-	
+
 	if (data->stack_a)
 		free_stack(data->stack_a);
 	if (data->stack_b)
@@ -43,7 +43,7 @@ void	quit(t_data *data, char flag)
 
 t_stack	*find_cheapest(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 	t_stack	*cheapest;
 
 	temp = stack;
@@ -129,4 +129,3 @@ void	reset_costs(t_data *data)
 		b = b->next;
 	}
 }
-

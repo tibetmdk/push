@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 10:28:07 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/15 22:53:29 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:12:00 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	bring_to_top_a(t_data *data)
 {
-	t_stack *a;
-	int	pos;
-	int	len;
+	t_stack	*a;
+	int		pos;
+	int		len;
 
 	len = get_stack_len(data->stack_a);
 	a = data->stack_a;
@@ -36,6 +36,7 @@ static void	bring_target_top_b(t_data *data)
 	t_stack	*a;
 	int		pos;
 	int		len_b;
+
 	len_b = get_stack_len(data->stack_b);
 	a = data->stack_a;
 	while (a)
@@ -99,7 +100,7 @@ static void	find_cheapest_in_a(t_data *data)
 		data->rrb = len_b - index;
 }
 
-void calculate_cost_a_to_b(t_data *data)
+void	calculate_cost_a_to_b(t_data *data)
 {
 	reset_costs(data);
 	bring_to_top_a(data);

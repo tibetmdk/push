@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 17:31:14 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/02 17:52:36 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:11:32 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, int start, int len)
 {
-	int	i;
-	int	s_len;
+	int		i;
+	int		s_len;
 	char	*str;
 
 	if (!s)

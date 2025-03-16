@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:48:17 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 01:23:19 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 12:58:38 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	get_stack_len(t_stack *stack)
 {
-	t_stack *temp;
-	int	count;
+	t_stack	*temp;
+	int		count;
 
 	count = 0;
 	temp = stack;
 	while (temp)
 	{
-			count++;
-			temp = temp->next;
+		count++;
+		temp = temp->next;
 	}
 	return (count);
 }
@@ -30,6 +30,7 @@ int	get_stack_len(t_stack *stack)
 int	stack_is_sorted(t_stack *stack)
 {
 	t_stack	*temp;
+
 	temp = stack;
 	while (temp->next)
 	{
@@ -45,7 +46,6 @@ void	init_stacks(t_data *data)
 	int		i;
 	t_stack	*new_node;
 	t_stack	*prev_node;
-
 
 	data->stack_a = NULL;
 	data->stack_b = NULL;

@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 16:40:34 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/14 12:36:58 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:11:09 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ long	ft_atol(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = (result * 10) + (str[i] - '0');
-		if ((sign == 1 && result > INT_MAX ) || (sign == -1 && -result < INT_MIN))
+		if ((sign == 1 && result > INT_MAX)
+			|| (sign == -1 && (-result) < INT_MIN))
 			ft_error();
 		i++;
 	}

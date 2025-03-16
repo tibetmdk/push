@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 11:00:52 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/15 22:46:33 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:06:08 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	find_min_on_value(t_stack *stack, int value)
 	t_stack	*best_match;
 	int		index;
 	int		target_index;
-	
+
 	index = 0;
 	target_index = -1;
 	temp = stack;

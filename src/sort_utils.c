@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:42:27 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/14 22:45:56 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:01:26 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sa(t_stack *stack_a, int print)
 {
 	int	temp;
-	
+
 	if (!stack_a || !stack_a->next)
 		return ;
 	temp = stack_a->value;
@@ -28,7 +28,7 @@ void	sa(t_stack *stack_a, int print)
 void	sb(t_stack *stack_b, int print)
 {
 	int	temp;
-	
+
 	if (!stack_b || !stack_b->next)
 		return ;
 	temp = stack_b->value;
@@ -67,7 +67,6 @@ void	pb(t_data *data, int print)
 		return ;
 	a = data->stack_a->next;
 	b = data->stack_a;
-
 	if (data->stack_a->next)
 		data->stack_a->next->prev = NULL;
 	data->stack_a->next = data->stack_b;
@@ -81,21 +80,20 @@ void	pb(t_data *data, int print)
 
 void	ra(t_data *data, int print)
 {
-    t_stack *head;
-    t_stack *tail;
+	t_stack	*head;
+	t_stack	*tail;
 
-    if (!data->stack_a || !data->stack_a->next)
-        return ;
-
-    head = data->stack_a;
-    data->stack_a = data->stack_a->next;
-    data->stack_a->prev = NULL;
-    tail = data->stack_a;
-    while (tail->next)
-        tail = tail->next;
-    tail->next = head;
-    head->prev = tail;
-    head->next = NULL;
-    if (print)
-        ft_printf("ra\n");
+	if (!data->stack_a || !data->stack_a->next)
+		return ;
+	head = data->stack_a;
+	data->stack_a = data->stack_a->next;
+	data->stack_a->prev = NULL;
+	tail = data->stack_a;
+	while (tail->next)
+		tail = tail->next;
+	tail->next = head;
+	head->prev = tail;
+	head->next = NULL;
+	if (print)
+		ft_printf("ra\n");
 }

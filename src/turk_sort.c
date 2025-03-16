@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:45:24 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 00:37:34 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 12:56:48 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	sort_three(t_data *data)
 static void	move_a_to_b(t_data *data)
 {
 	int	len_a;
-	
+
 	len_a = get_stack_len(data->stack_a);
 	while (len_a > 3)
 	{
@@ -90,14 +90,15 @@ static void	move_b_to_a(t_data *data)
 	}
 }
 
-static void final_rotation(t_data *data)
+static void	final_rotation(t_data *data)
 {
 	int	min_index;
 	int	size;
 
-	min_index = get_index(data->stack_a, find_min_in_stack(data->stack_a)->value);
+	min_index = get_index(data->stack_a,
+			find_min_in_stack(data->stack_a)->value);
 	size = get_stack_len(data->stack_a);
-	if (min_index <= size/2)
+	if (min_index <= size / 2)
 	{
 		while (min_index-- > 0)
 			ra(data, 1);

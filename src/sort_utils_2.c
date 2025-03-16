@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:50:22 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/14 22:55:10 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:00:25 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	rb(t_data *data, int print)
 
 	if (!data->stack_b || !data->stack_b->next)
 		return ;
-
 	head = data->stack_b;
 	data->stack_b = data->stack_b->next;
 	data->stack_b->prev = NULL;
@@ -33,7 +32,7 @@ void	rb(t_data *data, int print)
 		ft_printf("rb\n");
 }
 
-void	rra(t_data *data ,int print)
+void	rra(t_data *data, int print)
 {
 	t_stack	*tail;
 
@@ -51,7 +50,7 @@ void	rra(t_data *data ,int print)
 		ft_printf("rra\n");
 }
 
-void	rrb(t_data *data ,int print)
+void	rrb(t_data *data, int print)
 {
 	t_stack	*tail;
 

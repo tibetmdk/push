@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 12:41:59 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/15 12:59:43 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:06:32 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	calc_to_bring_top(t_data *data)
 	t_stack	*b;
 	int		pos;
 	int		len_b;
-	
+
 	len_b = get_stack_len(data->stack_b);
 	b = data->stack_b;
 	while (b)
