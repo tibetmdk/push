@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 13:02:05 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 01:29:03 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 15:32:46 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	*parse_input(t_data *data)
 	{
 		if (number_is_valid(data->buffer[i]))
 			quit(data, 'e');
-		data->tab[i] = ft_atol(data->buffer[i]);
+		data->tab[i] = ft_atol(data, data->buffer[i]);
 		i++;
 	}
 	i = 0;

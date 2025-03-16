@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:54:00 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 13:07:42 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 15:21:08 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	quit(t_data *data, char flag)
 	if (flag == '-')
 		exit(EXIT_FAILURE);
 	if (flag == 'e')
-		(write(1, "error\n", 7), exit(EXIT_FAILURE));
+		(write(1, "Error\n", 7), exit(EXIT_FAILURE));
 }
 
 t_stack	*find_cheapest(t_stack *stack)

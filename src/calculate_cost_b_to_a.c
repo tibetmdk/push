@@ -6,13 +6,13 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 12:41:59 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 13:06:32 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:53:07 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-static void	calc_to_bring_top(t_data *data)
+static void	bring_to_top_b(t_data *data)
 {
 	t_stack	*b;
 	int		pos;
@@ -31,7 +31,7 @@ static void	calc_to_bring_top(t_data *data)
 	}
 }
 
-static void	calc_to_put_on_a(t_data *data)
+static void	bring_target_top_a(t_data *data)
 {
 	t_stack	*b;
 	int		pos;
@@ -50,7 +50,7 @@ static void	calc_to_put_on_a(t_data *data)
 	}
 }
 
-static void	assign_costs(t_data *data)
+static void	set_costs(t_data *data)
 {
 	t_stack	*ptr;
 	int		rr;
@@ -78,33 +78,33 @@ static void	assign_costs(t_data *data)
 	}
 }
 
-static void	find_cheapest_b(t_data *data)
+static void	find_cheapest_in_b(t_data *data)
 {
 	t_stack	*cheapest;
-	int		pos;
+	int		index;
 	int		len_b;
 	int		len_a;
 
 	len_a = get_stack_len(data->stack_a);
 	len_b = get_stack_len(data->stack_b);
 	cheapest = find_cheapest(data->stack_b);
-	pos = get_index(data->stack_b, cheapest->value);
-	if (pos <= (len_b / 2))
-		data->rb = pos;
+	index = get_index(data->stack_b, cheapest->value);
+	if (index <= (len_b / 2))
+		data->rb = index;
 	else
-		data->rrb = len_b - pos;
-	pos = find_min_on_value(data->stack_a, cheapest->value);
-	if (pos <= (len_a / 2))
-		data->ra = pos;
+		data->rrb = len_b - index;
+	index = find_min_on_value(data->stack_a, cheapest->value);
+	if (index <= (len_a / 2))
+		data->ra = index;
 	else
-		data->rra = len_a - pos;
+		data->rra = len_a - index;
 }
 
-void	calc_cost_b(t_data *data)
+void	calculate_cost_b_to_a(t_data *data)
 {
 	reset_costs(data);
-	calc_to_bring_top(data);
-	calc_to_put_on_a(data);
-	assign_costs(data);
-	find_cheapest_b(data);
+	bring_to_top_b(data);
+	bring_target_top_a(data);
+	set_costs(data);
+	find_cheapest_in_b(data);
 }

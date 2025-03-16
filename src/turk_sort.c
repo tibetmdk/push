@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 11:45:24 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 12:56:48 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 15:19:25 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static void	move_b_to_a(t_data *data)
 	len_b = get_stack_len(data->stack_b);
 	while (len_b != 0)
 	{
-		calc_cost_b(data);
+		calculate_cost_b_to_a(data);
 		while (data->ra > 0 && data->rb > 0)
 			(rr(data, 1), data->ra--, data->rb--);
 		while (data->rra > 0 && data->rrb > 0)
@@ -115,6 +115,11 @@ void	turk_sort(t_data *data)
 	int	len;
 
 	len = get_stack_len(data->stack_a);
+	if (len == 2)
+	{
+		sort_two(data);
+		quit(data, '+');
+	}
 	if (len > 3)
 	{
 		pb(data, 1);

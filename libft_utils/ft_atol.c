@@ -6,13 +6,13 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 16:40:34 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 13:11:09 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 15:32:38 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-long	ft_atol(char *str)
+long	ft_atol(t_data *data, char *str)
 {
 	long	result;
 	int		sign;
@@ -34,7 +34,7 @@ long	ft_atol(char *str)
 		result = (result * 10) + (str[i] - '0');
 		if ((sign == 1 && result > INT_MAX)
 			|| (sign == -1 && (-result) < INT_MIN))
-			ft_error();
+			quit(data, 'e');
 		i++;
 	}
 	return (result * sign);

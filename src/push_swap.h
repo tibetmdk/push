@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 13:12:31 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 13:16:51 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 15:36:12 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_stack	*find_min_in_stack(t_stack *stack);
 
 int		number_is_valid(char *str);
 int		*parse_input(t_data *data);
-long	ft_atol(char *str);
+long	ft_atol(t_data *data, char *str);
 int		ft_printf(const char *str, ...);
 int		ft_strlen(const char *s);
 int		get_stack_len(t_stack *stack);
@@ -74,8 +74,9 @@ char	*ft_substr(char const *s, int start, int len);
 size_t	ft_strlcpy(char *destination, const char *source, size_t size);
 
 void	turk_sort(t_data *data);
+void	sort_two(t_data *data);
 void	calculate_cost_a_to_b(t_data *data);
-void	calc_cost_b(t_data *data);
+void	calculate_cost_b_to_a(t_data *data);
 void	quit(t_data *data, char flag);
 void	free_stack(t_stack *stack);
 void	reset_costs(t_data *data);
