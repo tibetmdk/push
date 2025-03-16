@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 13:05:31 by tmidik            #+#    #+#             */
-/*   Updated: 2025/03/16 13:05:34 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/03/16 13:23:07 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int ac, char **av)
 		if (parse_input(data) == 0)
 			init_stacks(data);
 		if (stack_is_sorted(data->stack_a) == -1)
-			(turk_sort(data), print_stack(data->stack_a), quit(data, '+'));
+			(turk_sort(data), quit(data, '+'));
 		else
 			quit(data, '+');
 		quit(data, '-');
